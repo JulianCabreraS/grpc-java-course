@@ -1054,6 +1054,978 @@ public final class Calculator {
 
   }
 
+  public interface PrimeNumberDecompositionRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:calculator.PrimeNumberDecompositionRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 number = 1;</code>
+     * @return The number.
+     */
+    int getNumber();
+  }
+  /**
+   * Protobuf type {@code calculator.PrimeNumberDecompositionRequest}
+   */
+  public  static final class PrimeNumberDecompositionRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:calculator.PrimeNumberDecompositionRequest)
+      PrimeNumberDecompositionRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PrimeNumberDecompositionRequest.newBuilder() to construct.
+    private PrimeNumberDecompositionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PrimeNumberDecompositionRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PrimeNumberDecompositionRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PrimeNumberDecompositionRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              number_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.proto.calculator.proto.Calculator.internal_static_calculator_PrimeNumberDecompositionRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.proto.calculator.proto.Calculator.internal_static_calculator_PrimeNumberDecompositionRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest.class, com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest.Builder.class);
+    }
+
+    public static final int NUMBER_FIELD_NUMBER = 1;
+    private int number_;
+    /**
+     * <code>int32 number = 1;</code>
+     * @return The number.
+     */
+    public int getNumber() {
+      return number_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (number_ != 0) {
+        output.writeInt32(1, number_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (number_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, number_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest)) {
+        return super.equals(obj);
+      }
+      com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest other = (com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest) obj;
+
+      if (getNumber()
+          != other.getNumber()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getNumber();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code calculator.PrimeNumberDecompositionRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:calculator.PrimeNumberDecompositionRequest)
+        com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.proto.calculator.proto.Calculator.internal_static_calculator_PrimeNumberDecompositionRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.proto.calculator.proto.Calculator.internal_static_calculator_PrimeNumberDecompositionRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest.class, com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest.Builder.class);
+      }
+
+      // Construct using com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        number_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.proto.calculator.proto.Calculator.internal_static_calculator_PrimeNumberDecompositionRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest getDefaultInstanceForType() {
+        return com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest build() {
+        com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest buildPartial() {
+        com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest result = new com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest(this);
+        result.number_ = number_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest) {
+          return mergeFrom((com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest other) {
+        if (other == com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest.getDefaultInstance()) return this;
+        if (other.getNumber() != 0) {
+          setNumber(other.getNumber());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int number_ ;
+      /**
+       * <code>int32 number = 1;</code>
+       * @return The number.
+       */
+      public int getNumber() {
+        return number_;
+      }
+      /**
+       * <code>int32 number = 1;</code>
+       * @param value The number to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNumber(int value) {
+        
+        number_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 number = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNumber() {
+        
+        number_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:calculator.PrimeNumberDecompositionRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:calculator.PrimeNumberDecompositionRequest)
+    private static final com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest();
+    }
+
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PrimeNumberDecompositionRequest>
+        PARSER = new com.google.protobuf.AbstractParser<PrimeNumberDecompositionRequest>() {
+      @java.lang.Override
+      public PrimeNumberDecompositionRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PrimeNumberDecompositionRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PrimeNumberDecompositionRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PrimeNumberDecompositionRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PrimeNumberDecompositionResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:calculator.PrimeNumberDecompositionResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 prime_factor = 1;</code>
+     * @return The primeFactor.
+     */
+    int getPrimeFactor();
+  }
+  /**
+   * Protobuf type {@code calculator.PrimeNumberDecompositionResponse}
+   */
+  public  static final class PrimeNumberDecompositionResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:calculator.PrimeNumberDecompositionResponse)
+      PrimeNumberDecompositionResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PrimeNumberDecompositionResponse.newBuilder() to construct.
+    private PrimeNumberDecompositionResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PrimeNumberDecompositionResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PrimeNumberDecompositionResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PrimeNumberDecompositionResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              primeFactor_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.proto.calculator.proto.Calculator.internal_static_calculator_PrimeNumberDecompositionResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.proto.calculator.proto.Calculator.internal_static_calculator_PrimeNumberDecompositionResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse.class, com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse.Builder.class);
+    }
+
+    public static final int PRIME_FACTOR_FIELD_NUMBER = 1;
+    private int primeFactor_;
+    /**
+     * <code>int32 prime_factor = 1;</code>
+     * @return The primeFactor.
+     */
+    public int getPrimeFactor() {
+      return primeFactor_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (primeFactor_ != 0) {
+        output.writeInt32(1, primeFactor_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (primeFactor_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, primeFactor_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse)) {
+        return super.equals(obj);
+      }
+      com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse other = (com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse) obj;
+
+      if (getPrimeFactor()
+          != other.getPrimeFactor()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PRIME_FACTOR_FIELD_NUMBER;
+      hash = (53 * hash) + getPrimeFactor();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code calculator.PrimeNumberDecompositionResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:calculator.PrimeNumberDecompositionResponse)
+        com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.proto.calculator.proto.Calculator.internal_static_calculator_PrimeNumberDecompositionResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.proto.calculator.proto.Calculator.internal_static_calculator_PrimeNumberDecompositionResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse.class, com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse.Builder.class);
+      }
+
+      // Construct using com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        primeFactor_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.proto.calculator.proto.Calculator.internal_static_calculator_PrimeNumberDecompositionResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse getDefaultInstanceForType() {
+        return com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse build() {
+        com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse buildPartial() {
+        com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse result = new com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse(this);
+        result.primeFactor_ = primeFactor_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse) {
+          return mergeFrom((com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse other) {
+        if (other == com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse.getDefaultInstance()) return this;
+        if (other.getPrimeFactor() != 0) {
+          setPrimeFactor(other.getPrimeFactor());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int primeFactor_ ;
+      /**
+       * <code>int32 prime_factor = 1;</code>
+       * @return The primeFactor.
+       */
+      public int getPrimeFactor() {
+        return primeFactor_;
+      }
+      /**
+       * <code>int32 prime_factor = 1;</code>
+       * @param value The primeFactor to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrimeFactor(int value) {
+        
+        primeFactor_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 prime_factor = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPrimeFactor() {
+        
+        primeFactor_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:calculator.PrimeNumberDecompositionResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:calculator.PrimeNumberDecompositionResponse)
+    private static final com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse();
+    }
+
+    public static com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PrimeNumberDecompositionResponse>
+        PARSER = new com.google.protobuf.AbstractParser<PrimeNumberDecompositionResponse>() {
+      @java.lang.Override
+      public PrimeNumberDecompositionResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PrimeNumberDecompositionResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PrimeNumberDecompositionResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PrimeNumberDecompositionResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_calculator_SumRequest_descriptor;
   private static final 
@@ -1064,6 +2036,16 @@ public final class Calculator {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_calculator_SumResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_calculator_PrimeNumberDecompositionRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_calculator_PrimeNumberDecompositionRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_calculator_PrimeNumberDecompositionResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_calculator_PrimeNumberDecompositionResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1076,10 +2058,16 @@ public final class Calculator {
       "\n\033calculator/calculator.proto\022\ncalculato" +
       "r\"9\n\nSumRequest\022\024\n\014first_number\030\001 \001(\005\022\025\n" +
       "\rsecond_number\030\002 \001(\005\"!\n\013SumResponse\022\022\n\ns" +
-      "um_result\030\001 \001(\0052M\n\021CalculatorService\0228\n\003" +
-      "sum\022\026.calculator.SumRequest\032\027.calculator" +
-      ".SumResponse\"\000B\034\n\032com.proto.calculator.p" +
-      "rotob\006proto3"
+      "um_result\030\001 \001(\005\"1\n\037PrimeNumberDecomposit" +
+      "ionRequest\022\016\n\006number\030\001 \001(\005\"8\n PrimeNumbe" +
+      "rDecompositionResponse\022\024\n\014prime_factor\030\001" +
+      " \001(\0052\310\001\n\021CalculatorService\0228\n\003sum\022\026.calc" +
+      "ulator.SumRequest\032\027.calculator.SumRespon" +
+      "se\"\000\022y\n\030PrimeNumberDecomposition\022+.calcu" +
+      "lator.PrimeNumberDecompositionRequest\032,." +
+      "calculator.PrimeNumberDecompositionRespo" +
+      "nse\"\0000\001B\034\n\032com.proto.calculator.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1097,6 +2085,18 @@ public final class Calculator {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_calculator_SumResponse_descriptor,
         new java.lang.String[] { "SumResult", });
+    internal_static_calculator_PrimeNumberDecompositionRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_calculator_PrimeNumberDecompositionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_calculator_PrimeNumberDecompositionRequest_descriptor,
+        new java.lang.String[] { "Number", });
+    internal_static_calculator_PrimeNumberDecompositionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_calculator_PrimeNumberDecompositionResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_calculator_PrimeNumberDecompositionResponse_descriptor,
+        new java.lang.String[] { "PrimeFactor", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

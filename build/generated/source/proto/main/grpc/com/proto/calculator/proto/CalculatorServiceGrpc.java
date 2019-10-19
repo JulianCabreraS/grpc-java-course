@@ -58,6 +58,37 @@ public final class CalculatorServiceGrpc {
     return getSumMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest,
+      com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse> getPrimeNumberDecompositionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PrimeNumberDecomposition",
+      requestType = com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest.class,
+      responseType = com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest,
+      com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse> getPrimeNumberDecompositionMethod() {
+    io.grpc.MethodDescriptor<com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest, com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse> getPrimeNumberDecompositionMethod;
+    if ((getPrimeNumberDecompositionMethod = CalculatorServiceGrpc.getPrimeNumberDecompositionMethod) == null) {
+      synchronized (CalculatorServiceGrpc.class) {
+        if ((getPrimeNumberDecompositionMethod = CalculatorServiceGrpc.getPrimeNumberDecompositionMethod) == null) {
+          CalculatorServiceGrpc.getPrimeNumberDecompositionMethod = getPrimeNumberDecompositionMethod =
+              io.grpc.MethodDescriptor.<com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest, com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PrimeNumberDecomposition"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CalculatorServiceMethodDescriptorSupplier("PrimeNumberDecomposition"))
+              .build();
+        }
+      }
+    }
+    return getPrimeNumberDecompositionMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -92,6 +123,13 @@ public final class CalculatorServiceGrpc {
       asyncUnimplementedUnaryCall(getSumMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void primeNumberDecomposition(com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest request,
+        io.grpc.stub.StreamObserver<com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getPrimeNumberDecompositionMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -101,6 +139,13 @@ public final class CalculatorServiceGrpc {
                 com.proto.calculator.proto.Calculator.SumRequest,
                 com.proto.calculator.proto.Calculator.SumResponse>(
                   this, METHODID_SUM)))
+          .addMethod(
+            getPrimeNumberDecompositionMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest,
+                com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse>(
+                  this, METHODID_PRIME_NUMBER_DECOMPOSITION)))
           .build();
     }
   }
@@ -130,6 +175,14 @@ public final class CalculatorServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getSumMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void primeNumberDecomposition(com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest request,
+        io.grpc.stub.StreamObserver<com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getPrimeNumberDecompositionMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -155,6 +208,14 @@ public final class CalculatorServiceGrpc {
     public com.proto.calculator.proto.Calculator.SumResponse sum(com.proto.calculator.proto.Calculator.SumRequest request) {
       return blockingUnaryCall(
           getChannel(), getSumMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse> primeNumberDecomposition(
+        com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest request) {
+      return blockingServerStreamingCall(
+          getChannel(), getPrimeNumberDecompositionMethod(), getCallOptions(), request);
     }
   }
 
@@ -186,6 +247,7 @@ public final class CalculatorServiceGrpc {
   }
 
   private static final int METHODID_SUM = 0;
+  private static final int METHODID_PRIME_NUMBER_DECOMPOSITION = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -207,6 +269,10 @@ public final class CalculatorServiceGrpc {
         case METHODID_SUM:
           serviceImpl.sum((com.proto.calculator.proto.Calculator.SumRequest) request,
               (io.grpc.stub.StreamObserver<com.proto.calculator.proto.Calculator.SumResponse>) responseObserver);
+          break;
+        case METHODID_PRIME_NUMBER_DECOMPOSITION:
+          serviceImpl.primeNumberDecomposition((com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest) request,
+              (io.grpc.stub.StreamObserver<com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -270,6 +336,7 @@ public final class CalculatorServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new CalculatorServiceFileDescriptorSupplier())
               .addMethod(getSumMethod())
+              .addMethod(getPrimeNumberDecompositionMethod())
               .build();
         }
       }

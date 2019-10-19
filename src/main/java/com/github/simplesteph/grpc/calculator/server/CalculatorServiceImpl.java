@@ -15,4 +15,22 @@ public class CalculatorServiceImpl extends CalculatorServiceGrpc.CalculatorServi
         responseObserver.onCompleted();
 
     }
+
+    @Override
+    public void primeNumberDecomposition(Calculator.PrimeNumberDecompositionRequest request, StreamObserver<Calculator.PrimeNumberDecompositionResponse> responseObserver) {
+        Integer number = request.getNumber();
+        Integer divisor =2;
+        while (number > 1){
+            if (number % divisor ==0){
+                number = number/divisor;
+                responseObserver.onNext(Calculator.PrimeNumberDecompositionResponse.newBuilder()
+                        .setPrimeFactor(divisor)
+                        .build());
+            }else{
+                  divisor = divisor+1;
+                }
+            }
+        responseObserver.onCompleted();
+
+    }
 }

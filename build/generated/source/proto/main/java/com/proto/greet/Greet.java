@@ -1346,6 +1346,624 @@ public final class Greet {
 
   }
 
+  public interface GreetManyTimesRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:greet.GreetManyTimesRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.greet.Greeting greeting = 1;</code>
+     * @return Whether the greeting field is set.
+     */
+    boolean hasGreeting();
+    /**
+     * <code>.greet.Greeting greeting = 1;</code>
+     * @return The greeting.
+     */
+    com.proto.greet.Greet.Greeting getGreeting();
+    /**
+     * <code>.greet.Greeting greeting = 1;</code>
+     */
+    com.proto.greet.Greet.GreetingOrBuilder getGreetingOrBuilder();
+  }
+  /**
+   * Protobuf type {@code greet.GreetManyTimesRequest}
+   */
+  public  static final class GreetManyTimesRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:greet.GreetManyTimesRequest)
+      GreetManyTimesRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GreetManyTimesRequest.newBuilder() to construct.
+    private GreetManyTimesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GreetManyTimesRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GreetManyTimesRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GreetManyTimesRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.proto.greet.Greet.Greeting.Builder subBuilder = null;
+              if (greeting_ != null) {
+                subBuilder = greeting_.toBuilder();
+              }
+              greeting_ = input.readMessage(com.proto.greet.Greet.Greeting.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(greeting_);
+                greeting_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.proto.greet.Greet.internal_static_greet_GreetManyTimesRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.proto.greet.Greet.internal_static_greet_GreetManyTimesRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.proto.greet.Greet.GreetManyTimesRequest.class, com.proto.greet.Greet.GreetManyTimesRequest.Builder.class);
+    }
+
+    public static final int GREETING_FIELD_NUMBER = 1;
+    private com.proto.greet.Greet.Greeting greeting_;
+    /**
+     * <code>.greet.Greeting greeting = 1;</code>
+     * @return Whether the greeting field is set.
+     */
+    public boolean hasGreeting() {
+      return greeting_ != null;
+    }
+    /**
+     * <code>.greet.Greeting greeting = 1;</code>
+     * @return The greeting.
+     */
+    public com.proto.greet.Greet.Greeting getGreeting() {
+      return greeting_ == null ? com.proto.greet.Greet.Greeting.getDefaultInstance() : greeting_;
+    }
+    /**
+     * <code>.greet.Greeting greeting = 1;</code>
+     */
+    public com.proto.greet.Greet.GreetingOrBuilder getGreetingOrBuilder() {
+      return getGreeting();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (greeting_ != null) {
+        output.writeMessage(1, getGreeting());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (greeting_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getGreeting());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.proto.greet.Greet.GreetManyTimesRequest)) {
+        return super.equals(obj);
+      }
+      com.proto.greet.Greet.GreetManyTimesRequest other = (com.proto.greet.Greet.GreetManyTimesRequest) obj;
+
+      if (hasGreeting() != other.hasGreeting()) return false;
+      if (hasGreeting()) {
+        if (!getGreeting()
+            .equals(other.getGreeting())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasGreeting()) {
+        hash = (37 * hash) + GREETING_FIELD_NUMBER;
+        hash = (53 * hash) + getGreeting().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.proto.greet.Greet.GreetManyTimesRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.proto.greet.Greet.GreetManyTimesRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code greet.GreetManyTimesRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:greet.GreetManyTimesRequest)
+        com.proto.greet.Greet.GreetManyTimesRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.proto.greet.Greet.internal_static_greet_GreetManyTimesRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.proto.greet.Greet.internal_static_greet_GreetManyTimesRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.proto.greet.Greet.GreetManyTimesRequest.class, com.proto.greet.Greet.GreetManyTimesRequest.Builder.class);
+      }
+
+      // Construct using com.proto.greet.Greet.GreetManyTimesRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (greetingBuilder_ == null) {
+          greeting_ = null;
+        } else {
+          greeting_ = null;
+          greetingBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.proto.greet.Greet.internal_static_greet_GreetManyTimesRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.proto.greet.Greet.GreetManyTimesRequest getDefaultInstanceForType() {
+        return com.proto.greet.Greet.GreetManyTimesRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.proto.greet.Greet.GreetManyTimesRequest build() {
+        com.proto.greet.Greet.GreetManyTimesRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.proto.greet.Greet.GreetManyTimesRequest buildPartial() {
+        com.proto.greet.Greet.GreetManyTimesRequest result = new com.proto.greet.Greet.GreetManyTimesRequest(this);
+        if (greetingBuilder_ == null) {
+          result.greeting_ = greeting_;
+        } else {
+          result.greeting_ = greetingBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.proto.greet.Greet.GreetManyTimesRequest) {
+          return mergeFrom((com.proto.greet.Greet.GreetManyTimesRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.proto.greet.Greet.GreetManyTimesRequest other) {
+        if (other == com.proto.greet.Greet.GreetManyTimesRequest.getDefaultInstance()) return this;
+        if (other.hasGreeting()) {
+          mergeGreeting(other.getGreeting());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.proto.greet.Greet.GreetManyTimesRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.proto.greet.Greet.GreetManyTimesRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.proto.greet.Greet.Greeting greeting_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.proto.greet.Greet.Greeting, com.proto.greet.Greet.Greeting.Builder, com.proto.greet.Greet.GreetingOrBuilder> greetingBuilder_;
+      /**
+       * <code>.greet.Greeting greeting = 1;</code>
+       * @return Whether the greeting field is set.
+       */
+      public boolean hasGreeting() {
+        return greetingBuilder_ != null || greeting_ != null;
+      }
+      /**
+       * <code>.greet.Greeting greeting = 1;</code>
+       * @return The greeting.
+       */
+      public com.proto.greet.Greet.Greeting getGreeting() {
+        if (greetingBuilder_ == null) {
+          return greeting_ == null ? com.proto.greet.Greet.Greeting.getDefaultInstance() : greeting_;
+        } else {
+          return greetingBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.greet.Greeting greeting = 1;</code>
+       */
+      public Builder setGreeting(com.proto.greet.Greet.Greeting value) {
+        if (greetingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          greeting_ = value;
+          onChanged();
+        } else {
+          greetingBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.greet.Greeting greeting = 1;</code>
+       */
+      public Builder setGreeting(
+          com.proto.greet.Greet.Greeting.Builder builderForValue) {
+        if (greetingBuilder_ == null) {
+          greeting_ = builderForValue.build();
+          onChanged();
+        } else {
+          greetingBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.greet.Greeting greeting = 1;</code>
+       */
+      public Builder mergeGreeting(com.proto.greet.Greet.Greeting value) {
+        if (greetingBuilder_ == null) {
+          if (greeting_ != null) {
+            greeting_ =
+              com.proto.greet.Greet.Greeting.newBuilder(greeting_).mergeFrom(value).buildPartial();
+          } else {
+            greeting_ = value;
+          }
+          onChanged();
+        } else {
+          greetingBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.greet.Greeting greeting = 1;</code>
+       */
+      public Builder clearGreeting() {
+        if (greetingBuilder_ == null) {
+          greeting_ = null;
+          onChanged();
+        } else {
+          greeting_ = null;
+          greetingBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.greet.Greeting greeting = 1;</code>
+       */
+      public com.proto.greet.Greet.Greeting.Builder getGreetingBuilder() {
+        
+        onChanged();
+        return getGreetingFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.greet.Greeting greeting = 1;</code>
+       */
+      public com.proto.greet.Greet.GreetingOrBuilder getGreetingOrBuilder() {
+        if (greetingBuilder_ != null) {
+          return greetingBuilder_.getMessageOrBuilder();
+        } else {
+          return greeting_ == null ?
+              com.proto.greet.Greet.Greeting.getDefaultInstance() : greeting_;
+        }
+      }
+      /**
+       * <code>.greet.Greeting greeting = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.proto.greet.Greet.Greeting, com.proto.greet.Greet.Greeting.Builder, com.proto.greet.Greet.GreetingOrBuilder> 
+          getGreetingFieldBuilder() {
+        if (greetingBuilder_ == null) {
+          greetingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.proto.greet.Greet.Greeting, com.proto.greet.Greet.Greeting.Builder, com.proto.greet.Greet.GreetingOrBuilder>(
+                  getGreeting(),
+                  getParentForChildren(),
+                  isClean());
+          greeting_ = null;
+        }
+        return greetingBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:greet.GreetManyTimesRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:greet.GreetManyTimesRequest)
+    private static final com.proto.greet.Greet.GreetManyTimesRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.proto.greet.Greet.GreetManyTimesRequest();
+    }
+
+    public static com.proto.greet.Greet.GreetManyTimesRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GreetManyTimesRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GreetManyTimesRequest>() {
+      @java.lang.Override
+      public GreetManyTimesRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GreetManyTimesRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GreetManyTimesRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GreetManyTimesRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.proto.greet.Greet.GreetManyTimesRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface GreetResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:greet.GreetResponse)
       com.google.protobuf.MessageOrBuilder {
@@ -1912,6 +2530,572 @@ public final class Greet {
 
   }
 
+  public interface GreetManyTimesResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:greet.GreetManyTimesResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string result = 1;</code>
+     * @return The result.
+     */
+    java.lang.String getResult();
+    /**
+     * <code>string result = 1;</code>
+     * @return The bytes for result.
+     */
+    com.google.protobuf.ByteString
+        getResultBytes();
+  }
+  /**
+   * Protobuf type {@code greet.GreetManyTimesResponse}
+   */
+  public  static final class GreetManyTimesResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:greet.GreetManyTimesResponse)
+      GreetManyTimesResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GreetManyTimesResponse.newBuilder() to construct.
+    private GreetManyTimesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GreetManyTimesResponse() {
+      result_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GreetManyTimesResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GreetManyTimesResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              result_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.proto.greet.Greet.internal_static_greet_GreetManyTimesResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.proto.greet.Greet.internal_static_greet_GreetManyTimesResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.proto.greet.Greet.GreetManyTimesResponse.class, com.proto.greet.Greet.GreetManyTimesResponse.Builder.class);
+    }
+
+    public static final int RESULT_FIELD_NUMBER = 1;
+    private volatile java.lang.Object result_;
+    /**
+     * <code>string result = 1;</code>
+     * @return The result.
+     */
+    public java.lang.String getResult() {
+      java.lang.Object ref = result_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        result_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string result = 1;</code>
+     * @return The bytes for result.
+     */
+    public com.google.protobuf.ByteString
+        getResultBytes() {
+      java.lang.Object ref = result_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        result_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getResultBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, result_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getResultBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, result_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.proto.greet.Greet.GreetManyTimesResponse)) {
+        return super.equals(obj);
+      }
+      com.proto.greet.Greet.GreetManyTimesResponse other = (com.proto.greet.Greet.GreetManyTimesResponse) obj;
+
+      if (!getResult()
+          .equals(other.getResult())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RESULT_FIELD_NUMBER;
+      hash = (53 * hash) + getResult().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.proto.greet.Greet.GreetManyTimesResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.proto.greet.Greet.GreetManyTimesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.proto.greet.Greet.GreetManyTimesResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code greet.GreetManyTimesResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:greet.GreetManyTimesResponse)
+        com.proto.greet.Greet.GreetManyTimesResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.proto.greet.Greet.internal_static_greet_GreetManyTimesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.proto.greet.Greet.internal_static_greet_GreetManyTimesResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.proto.greet.Greet.GreetManyTimesResponse.class, com.proto.greet.Greet.GreetManyTimesResponse.Builder.class);
+      }
+
+      // Construct using com.proto.greet.Greet.GreetManyTimesResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        result_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.proto.greet.Greet.internal_static_greet_GreetManyTimesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.proto.greet.Greet.GreetManyTimesResponse getDefaultInstanceForType() {
+        return com.proto.greet.Greet.GreetManyTimesResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.proto.greet.Greet.GreetManyTimesResponse build() {
+        com.proto.greet.Greet.GreetManyTimesResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.proto.greet.Greet.GreetManyTimesResponse buildPartial() {
+        com.proto.greet.Greet.GreetManyTimesResponse result = new com.proto.greet.Greet.GreetManyTimesResponse(this);
+        result.result_ = result_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.proto.greet.Greet.GreetManyTimesResponse) {
+          return mergeFrom((com.proto.greet.Greet.GreetManyTimesResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.proto.greet.Greet.GreetManyTimesResponse other) {
+        if (other == com.proto.greet.Greet.GreetManyTimesResponse.getDefaultInstance()) return this;
+        if (!other.getResult().isEmpty()) {
+          result_ = other.result_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.proto.greet.Greet.GreetManyTimesResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.proto.greet.Greet.GreetManyTimesResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object result_ = "";
+      /**
+       * <code>string result = 1;</code>
+       * @return The result.
+       */
+      public java.lang.String getResult() {
+        java.lang.Object ref = result_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          result_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string result = 1;</code>
+       * @return The bytes for result.
+       */
+      public com.google.protobuf.ByteString
+          getResultBytes() {
+        java.lang.Object ref = result_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          result_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string result = 1;</code>
+       * @param value The result to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResult(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        result_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string result = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearResult() {
+        
+        result_ = getDefaultInstance().getResult();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string result = 1;</code>
+       * @param value The bytes for result to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResultBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        result_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:greet.GreetManyTimesResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:greet.GreetManyTimesResponse)
+    private static final com.proto.greet.Greet.GreetManyTimesResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.proto.greet.Greet.GreetManyTimesResponse();
+    }
+
+    public static com.proto.greet.Greet.GreetManyTimesResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GreetManyTimesResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GreetManyTimesResponse>() {
+      @java.lang.Override
+      public GreetManyTimesResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GreetManyTimesResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GreetManyTimesResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GreetManyTimesResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.proto.greet.Greet.GreetManyTimesResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_greet_Greeting_descriptor;
   private static final 
@@ -1923,10 +3107,20 @@ public final class Greet {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_greet_GreetRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_greet_GreetManyTimesRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_greet_GreetManyTimesRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_greet_GreetResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_greet_GreetResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_greet_GreetManyTimesResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_greet_GreetManyTimesResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1939,10 +3133,15 @@ public final class Greet {
       "\n\021greet/greet.proto\022\005greet\"1\n\010Greeting\022\022" +
       "\n\nfirst_name\030\001 \001(\t\022\021\n\tlast_name\030\002 \001(\t\"1\n" +
       "\014GreetRequest\022!\n\010greeting\030\001 \001(\0132\017.greet." +
-      "Greeting\"\037\n\rGreetResponse\022\016\n\006result\030\001 \001(" +
-      "\t2D\n\014GreetService\0224\n\005Greet\022\023.greet.Greet" +
-      "Request\032\024.greet.GreetResponse\"\000B\021\n\017com.p" +
-      "roto.greetb\006proto3"
+      "Greeting\":\n\025GreetManyTimesRequest\022!\n\010gre" +
+      "eting\030\001 \001(\0132\017.greet.Greeting\"\037\n\rGreetRes" +
+      "ponse\022\016\n\006result\030\001 \001(\t\"(\n\026GreetManyTimesR" +
+      "esponse\022\016\n\006result\030\001 \001(\t2\227\001\n\014GreetService" +
+      "\0224\n\005Greet\022\023.greet.GreetRequest\032\024.greet.G" +
+      "reetResponse\"\000\022Q\n\016GreetManyTimes\022\034.greet" +
+      ".GreetManyTimesRequest\032\035.greet.GreetMany" +
+      "TimesResponse\"\0000\001B\021\n\017com.proto.greetb\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1960,11 +3159,23 @@ public final class Greet {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_greet_GreetRequest_descriptor,
         new java.lang.String[] { "Greeting", });
-    internal_static_greet_GreetResponse_descriptor =
+    internal_static_greet_GreetManyTimesRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_greet_GreetManyTimesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_greet_GreetManyTimesRequest_descriptor,
+        new java.lang.String[] { "Greeting", });
+    internal_static_greet_GreetResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_greet_GreetResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_greet_GreetResponse_descriptor,
+        new java.lang.String[] { "Result", });
+    internal_static_greet_GreetManyTimesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_greet_GreetManyTimesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_greet_GreetManyTimesResponse_descriptor,
         new java.lang.String[] { "Result", });
   }
 
