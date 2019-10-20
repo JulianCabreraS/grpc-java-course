@@ -2,6 +2,8 @@ package com.github.simplesteph.grpc.calculator.server;
 
 import com.proto.calculator.proto.Calculator;
 import com.proto.calculator.proto.CalculatorServiceGrpc;
+import com.proto.calculator.proto.Calculator.ComputeAverageResponse;
+import com.proto.calculator.proto.Calculator.ComputeAverageRequest;
 import io.grpc.stub.StreamObserver;
 
 public class CalculatorServiceImpl extends CalculatorServiceGrpc.CalculatorServiceImplBase {
@@ -32,5 +34,37 @@ public class CalculatorServiceImpl extends CalculatorServiceGrpc.CalculatorServi
             }
         responseObserver.onCompleted();
 
+    }
+
+    @Override
+    public StreamObserver<ComputeAverageRequest> computeAverage(StreamObserver<ComputeAverageResponse> responseObserver) {
+
+        StreamObserver<ComputeAverageRequest> streamObserver = new StreamObserver<ComputeAverageRequest>() {
+            int sumTotal =0;
+            int size=0;
+            double average =0;
+            @Override
+            public void onNext(ComputeAverageRequest value) {
+                sumTotal+= value.getNumber();
+                size+=1;
+            }
+
+            @Override
+            public void onError(Throwable t) {
+
+            }
+
+            @Override
+            public void onCompleted() {
+                average = (double) sumTotal/size;
+                ComputeAverageResponse computeAverageResponse = ComputeAverageResponse.newBuilder()
+                        .setAverage(average)
+                        .build();
+                responseObserver.onNext(computeAverageResponse);
+                responseObserver.onCompleted();
+            }
+        };
+
+        return streamObserver;
     }
 }

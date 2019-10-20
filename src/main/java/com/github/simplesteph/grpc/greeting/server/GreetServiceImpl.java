@@ -1,10 +1,14 @@
 package com.github.simplesteph.grpc.greeting.server;
 
+import com.proto.greet.Greet;
+import com.proto.greet.Greet.Greeting;
 import com.proto.greet.Greet.GreetRequest;
 import com.proto.greet.Greet.GreetResponse;
-import com.proto.greet.Greet.Greeting;
+
 import com.proto.greet.Greet.GreetManyTimesRequest;
 import com.proto.greet.Greet.GreetManyTimesResponse;
+import com.proto.greet.Greet.LongGreetRequest;
+import com.proto.greet.Greet.LongGreetResponse;
 import com.proto.greet.GreetServiceGrpc;
 import io.grpc.stub.StreamObserver;
 
@@ -51,5 +55,36 @@ public class GreetServiceImpl extends GreetServiceGrpc.GreetServiceImplBase {
         responseObserver.onCompleted();
     }
 
+    @Override
+    public StreamObserver<Greet.LongGreetRequest> longGreet(StreamObserver<Greet.LongGreetResponse> responseObserver) {
 
+        StreamObserver<LongGreetRequest> streamObserverOfRequest = new StreamObserver<LongGreetRequest>() {
+            String result = "";
+
+            @Override
+            public void onNext(LongGreetRequest value) {
+                //client sends a message
+                result += "Hello " + value.getGreeting().getFirstName()+"!";
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                //client sends an error
+            }
+
+            @Override
+            public void onCompleted() {
+                LongGreetResponse longGreetResponse = LongGreetResponse.newBuilder()
+                        .setResult(result)
+                        .build();
+
+                //client is done
+                responseObserver.onNext(longGreetResponse);
+
+                //this is when we want to retun a response
+                responseObserver.onCompleted();
+            }
+        };
+        return streamObserverOfRequest;
+    }
 }
