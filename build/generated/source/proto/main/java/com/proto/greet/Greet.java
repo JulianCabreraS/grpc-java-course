@@ -4304,6 +4304,1198 @@ public final class Greet {
 
   }
 
+  public interface GreetEveryoneRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:greet.GreetEveryoneRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.greet.Greeting greeting = 1;</code>
+     * @return Whether the greeting field is set.
+     */
+    boolean hasGreeting();
+    /**
+     * <code>.greet.Greeting greeting = 1;</code>
+     * @return The greeting.
+     */
+    com.proto.greet.Greet.Greeting getGreeting();
+    /**
+     * <code>.greet.Greeting greeting = 1;</code>
+     */
+    com.proto.greet.Greet.GreetingOrBuilder getGreetingOrBuilder();
+  }
+  /**
+   * <pre>
+   *BIDI Streaming
+   * </pre>
+   *
+   * Protobuf type {@code greet.GreetEveryoneRequest}
+   */
+  public  static final class GreetEveryoneRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:greet.GreetEveryoneRequest)
+      GreetEveryoneRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GreetEveryoneRequest.newBuilder() to construct.
+    private GreetEveryoneRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GreetEveryoneRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GreetEveryoneRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GreetEveryoneRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.proto.greet.Greet.Greeting.Builder subBuilder = null;
+              if (greeting_ != null) {
+                subBuilder = greeting_.toBuilder();
+              }
+              greeting_ = input.readMessage(com.proto.greet.Greet.Greeting.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(greeting_);
+                greeting_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.proto.greet.Greet.internal_static_greet_GreetEveryoneRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.proto.greet.Greet.internal_static_greet_GreetEveryoneRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.proto.greet.Greet.GreetEveryoneRequest.class, com.proto.greet.Greet.GreetEveryoneRequest.Builder.class);
+    }
+
+    public static final int GREETING_FIELD_NUMBER = 1;
+    private com.proto.greet.Greet.Greeting greeting_;
+    /**
+     * <code>.greet.Greeting greeting = 1;</code>
+     * @return Whether the greeting field is set.
+     */
+    public boolean hasGreeting() {
+      return greeting_ != null;
+    }
+    /**
+     * <code>.greet.Greeting greeting = 1;</code>
+     * @return The greeting.
+     */
+    public com.proto.greet.Greet.Greeting getGreeting() {
+      return greeting_ == null ? com.proto.greet.Greet.Greeting.getDefaultInstance() : greeting_;
+    }
+    /**
+     * <code>.greet.Greeting greeting = 1;</code>
+     */
+    public com.proto.greet.Greet.GreetingOrBuilder getGreetingOrBuilder() {
+      return getGreeting();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (greeting_ != null) {
+        output.writeMessage(1, getGreeting());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (greeting_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getGreeting());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.proto.greet.Greet.GreetEveryoneRequest)) {
+        return super.equals(obj);
+      }
+      com.proto.greet.Greet.GreetEveryoneRequest other = (com.proto.greet.Greet.GreetEveryoneRequest) obj;
+
+      if (hasGreeting() != other.hasGreeting()) return false;
+      if (hasGreeting()) {
+        if (!getGreeting()
+            .equals(other.getGreeting())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasGreeting()) {
+        hash = (37 * hash) + GREETING_FIELD_NUMBER;
+        hash = (53 * hash) + getGreeting().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.proto.greet.Greet.GreetEveryoneRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.proto.greet.Greet.GreetEveryoneRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *BIDI Streaming
+     * </pre>
+     *
+     * Protobuf type {@code greet.GreetEveryoneRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:greet.GreetEveryoneRequest)
+        com.proto.greet.Greet.GreetEveryoneRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.proto.greet.Greet.internal_static_greet_GreetEveryoneRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.proto.greet.Greet.internal_static_greet_GreetEveryoneRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.proto.greet.Greet.GreetEveryoneRequest.class, com.proto.greet.Greet.GreetEveryoneRequest.Builder.class);
+      }
+
+      // Construct using com.proto.greet.Greet.GreetEveryoneRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (greetingBuilder_ == null) {
+          greeting_ = null;
+        } else {
+          greeting_ = null;
+          greetingBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.proto.greet.Greet.internal_static_greet_GreetEveryoneRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.proto.greet.Greet.GreetEveryoneRequest getDefaultInstanceForType() {
+        return com.proto.greet.Greet.GreetEveryoneRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.proto.greet.Greet.GreetEveryoneRequest build() {
+        com.proto.greet.Greet.GreetEveryoneRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.proto.greet.Greet.GreetEveryoneRequest buildPartial() {
+        com.proto.greet.Greet.GreetEveryoneRequest result = new com.proto.greet.Greet.GreetEveryoneRequest(this);
+        if (greetingBuilder_ == null) {
+          result.greeting_ = greeting_;
+        } else {
+          result.greeting_ = greetingBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.proto.greet.Greet.GreetEveryoneRequest) {
+          return mergeFrom((com.proto.greet.Greet.GreetEveryoneRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.proto.greet.Greet.GreetEveryoneRequest other) {
+        if (other == com.proto.greet.Greet.GreetEveryoneRequest.getDefaultInstance()) return this;
+        if (other.hasGreeting()) {
+          mergeGreeting(other.getGreeting());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.proto.greet.Greet.GreetEveryoneRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.proto.greet.Greet.GreetEveryoneRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.proto.greet.Greet.Greeting greeting_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.proto.greet.Greet.Greeting, com.proto.greet.Greet.Greeting.Builder, com.proto.greet.Greet.GreetingOrBuilder> greetingBuilder_;
+      /**
+       * <code>.greet.Greeting greeting = 1;</code>
+       * @return Whether the greeting field is set.
+       */
+      public boolean hasGreeting() {
+        return greetingBuilder_ != null || greeting_ != null;
+      }
+      /**
+       * <code>.greet.Greeting greeting = 1;</code>
+       * @return The greeting.
+       */
+      public com.proto.greet.Greet.Greeting getGreeting() {
+        if (greetingBuilder_ == null) {
+          return greeting_ == null ? com.proto.greet.Greet.Greeting.getDefaultInstance() : greeting_;
+        } else {
+          return greetingBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.greet.Greeting greeting = 1;</code>
+       */
+      public Builder setGreeting(com.proto.greet.Greet.Greeting value) {
+        if (greetingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          greeting_ = value;
+          onChanged();
+        } else {
+          greetingBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.greet.Greeting greeting = 1;</code>
+       */
+      public Builder setGreeting(
+          com.proto.greet.Greet.Greeting.Builder builderForValue) {
+        if (greetingBuilder_ == null) {
+          greeting_ = builderForValue.build();
+          onChanged();
+        } else {
+          greetingBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.greet.Greeting greeting = 1;</code>
+       */
+      public Builder mergeGreeting(com.proto.greet.Greet.Greeting value) {
+        if (greetingBuilder_ == null) {
+          if (greeting_ != null) {
+            greeting_ =
+              com.proto.greet.Greet.Greeting.newBuilder(greeting_).mergeFrom(value).buildPartial();
+          } else {
+            greeting_ = value;
+          }
+          onChanged();
+        } else {
+          greetingBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.greet.Greeting greeting = 1;</code>
+       */
+      public Builder clearGreeting() {
+        if (greetingBuilder_ == null) {
+          greeting_ = null;
+          onChanged();
+        } else {
+          greeting_ = null;
+          greetingBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.greet.Greeting greeting = 1;</code>
+       */
+      public com.proto.greet.Greet.Greeting.Builder getGreetingBuilder() {
+        
+        onChanged();
+        return getGreetingFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.greet.Greeting greeting = 1;</code>
+       */
+      public com.proto.greet.Greet.GreetingOrBuilder getGreetingOrBuilder() {
+        if (greetingBuilder_ != null) {
+          return greetingBuilder_.getMessageOrBuilder();
+        } else {
+          return greeting_ == null ?
+              com.proto.greet.Greet.Greeting.getDefaultInstance() : greeting_;
+        }
+      }
+      /**
+       * <code>.greet.Greeting greeting = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.proto.greet.Greet.Greeting, com.proto.greet.Greet.Greeting.Builder, com.proto.greet.Greet.GreetingOrBuilder> 
+          getGreetingFieldBuilder() {
+        if (greetingBuilder_ == null) {
+          greetingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.proto.greet.Greet.Greeting, com.proto.greet.Greet.Greeting.Builder, com.proto.greet.Greet.GreetingOrBuilder>(
+                  getGreeting(),
+                  getParentForChildren(),
+                  isClean());
+          greeting_ = null;
+        }
+        return greetingBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:greet.GreetEveryoneRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:greet.GreetEveryoneRequest)
+    private static final com.proto.greet.Greet.GreetEveryoneRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.proto.greet.Greet.GreetEveryoneRequest();
+    }
+
+    public static com.proto.greet.Greet.GreetEveryoneRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GreetEveryoneRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GreetEveryoneRequest>() {
+      @java.lang.Override
+      public GreetEveryoneRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GreetEveryoneRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GreetEveryoneRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GreetEveryoneRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.proto.greet.Greet.GreetEveryoneRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GreetEveryoneResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:greet.GreetEveryoneResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string result = 1;</code>
+     * @return The result.
+     */
+    java.lang.String getResult();
+    /**
+     * <code>string result = 1;</code>
+     * @return The bytes for result.
+     */
+    com.google.protobuf.ByteString
+        getResultBytes();
+  }
+  /**
+   * Protobuf type {@code greet.GreetEveryoneResponse}
+   */
+  public  static final class GreetEveryoneResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:greet.GreetEveryoneResponse)
+      GreetEveryoneResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GreetEveryoneResponse.newBuilder() to construct.
+    private GreetEveryoneResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GreetEveryoneResponse() {
+      result_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GreetEveryoneResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GreetEveryoneResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              result_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.proto.greet.Greet.internal_static_greet_GreetEveryoneResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.proto.greet.Greet.internal_static_greet_GreetEveryoneResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.proto.greet.Greet.GreetEveryoneResponse.class, com.proto.greet.Greet.GreetEveryoneResponse.Builder.class);
+    }
+
+    public static final int RESULT_FIELD_NUMBER = 1;
+    private volatile java.lang.Object result_;
+    /**
+     * <code>string result = 1;</code>
+     * @return The result.
+     */
+    public java.lang.String getResult() {
+      java.lang.Object ref = result_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        result_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string result = 1;</code>
+     * @return The bytes for result.
+     */
+    public com.google.protobuf.ByteString
+        getResultBytes() {
+      java.lang.Object ref = result_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        result_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getResultBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, result_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getResultBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, result_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.proto.greet.Greet.GreetEveryoneResponse)) {
+        return super.equals(obj);
+      }
+      com.proto.greet.Greet.GreetEveryoneResponse other = (com.proto.greet.Greet.GreetEveryoneResponse) obj;
+
+      if (!getResult()
+          .equals(other.getResult())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RESULT_FIELD_NUMBER;
+      hash = (53 * hash) + getResult().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.proto.greet.Greet.GreetEveryoneResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.proto.greet.Greet.GreetEveryoneResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.proto.greet.Greet.GreetEveryoneResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code greet.GreetEveryoneResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:greet.GreetEveryoneResponse)
+        com.proto.greet.Greet.GreetEveryoneResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.proto.greet.Greet.internal_static_greet_GreetEveryoneResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.proto.greet.Greet.internal_static_greet_GreetEveryoneResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.proto.greet.Greet.GreetEveryoneResponse.class, com.proto.greet.Greet.GreetEveryoneResponse.Builder.class);
+      }
+
+      // Construct using com.proto.greet.Greet.GreetEveryoneResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        result_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.proto.greet.Greet.internal_static_greet_GreetEveryoneResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.proto.greet.Greet.GreetEveryoneResponse getDefaultInstanceForType() {
+        return com.proto.greet.Greet.GreetEveryoneResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.proto.greet.Greet.GreetEveryoneResponse build() {
+        com.proto.greet.Greet.GreetEveryoneResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.proto.greet.Greet.GreetEveryoneResponse buildPartial() {
+        com.proto.greet.Greet.GreetEveryoneResponse result = new com.proto.greet.Greet.GreetEveryoneResponse(this);
+        result.result_ = result_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.proto.greet.Greet.GreetEveryoneResponse) {
+          return mergeFrom((com.proto.greet.Greet.GreetEveryoneResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.proto.greet.Greet.GreetEveryoneResponse other) {
+        if (other == com.proto.greet.Greet.GreetEveryoneResponse.getDefaultInstance()) return this;
+        if (!other.getResult().isEmpty()) {
+          result_ = other.result_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.proto.greet.Greet.GreetEveryoneResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.proto.greet.Greet.GreetEveryoneResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object result_ = "";
+      /**
+       * <code>string result = 1;</code>
+       * @return The result.
+       */
+      public java.lang.String getResult() {
+        java.lang.Object ref = result_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          result_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string result = 1;</code>
+       * @return The bytes for result.
+       */
+      public com.google.protobuf.ByteString
+          getResultBytes() {
+        java.lang.Object ref = result_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          result_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string result = 1;</code>
+       * @param value The result to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResult(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        result_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string result = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearResult() {
+        
+        result_ = getDefaultInstance().getResult();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string result = 1;</code>
+       * @param value The bytes for result to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResultBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        result_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:greet.GreetEveryoneResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:greet.GreetEveryoneResponse)
+    private static final com.proto.greet.Greet.GreetEveryoneResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.proto.greet.Greet.GreetEveryoneResponse();
+    }
+
+    public static com.proto.greet.Greet.GreetEveryoneResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GreetEveryoneResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GreetEveryoneResponse>() {
+      @java.lang.Override
+      public GreetEveryoneResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GreetEveryoneResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GreetEveryoneResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GreetEveryoneResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.proto.greet.Greet.GreetEveryoneResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_greet_Greeting_descriptor;
   private static final 
@@ -4339,6 +5531,16 @@ public final class Greet {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_greet_LongGreetResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_greet_GreetEveryoneRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_greet_GreetEveryoneRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_greet_GreetEveryoneResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_greet_GreetEveryoneResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4356,14 +5558,18 @@ public final class Greet {
       " \001(\0132\017.greet.Greeting\"(\n\026GreetManyTimesR" +
       "esponse\022\016\n\006result\030\001 \001(\t\"5\n\020LongGreetRequ" +
       "est\022!\n\010greeting\030\001 \001(\0132\017.greet.Greeting\"#" +
-      "\n\021LongGreetResponse\022\016\n\006result\030\001 \001(\t2\333\001\n\014" +
-      "GreetService\0224\n\005Greet\022\023.greet.GreetReque" +
-      "st\032\024.greet.GreetResponse\"\000\022Q\n\016GreetManyT" +
-      "imes\022\034.greet.GreetManyTimesRequest\032\035.gre" +
-      "et.GreetManyTimesResponse\"\0000\001\022B\n\tLongGre" +
-      "et\022\027.greet.LongGreetRequest\032\030.greet.Long" +
-      "GreetResponse\"\000(\001B\021\n\017com.proto.greetb\006pr" +
-      "oto3"
+      "\n\021LongGreetResponse\022\016\n\006result\030\001 \001(\t\"9\n\024G" +
+      "reetEveryoneRequest\022!\n\010greeting\030\001 \001(\0132\017." +
+      "greet.Greeting\"\'\n\025GreetEveryoneResponse\022" +
+      "\016\n\006result\030\001 \001(\t2\255\002\n\014GreetService\0224\n\005Gree" +
+      "t\022\023.greet.GreetRequest\032\024.greet.GreetResp" +
+      "onse\"\000\022Q\n\016GreetManyTimes\022\034.greet.GreetMa" +
+      "nyTimesRequest\032\035.greet.GreetManyTimesRes" +
+      "ponse\"\0000\001\022B\n\tLongGreet\022\027.greet.LongGreet" +
+      "Request\032\030.greet.LongGreetResponse\"\000(\001\022P\n" +
+      "\rGreetEveryone\022\033.greet.GreetEveryoneRequ" +
+      "est\032\034.greet.GreetEveryoneResponse\"\000(\0010\001B" +
+      "\021\n\017com.proto.greetb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4410,6 +5616,18 @@ public final class Greet {
     internal_static_greet_LongGreetResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_greet_LongGreetResponse_descriptor,
+        new java.lang.String[] { "Result", });
+    internal_static_greet_GreetEveryoneRequest_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_greet_GreetEveryoneRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_greet_GreetEveryoneRequest_descriptor,
+        new java.lang.String[] { "Greeting", });
+    internal_static_greet_GreetEveryoneResponse_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_greet_GreetEveryoneResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_greet_GreetEveryoneResponse_descriptor,
         new java.lang.String[] { "Result", });
   }
 

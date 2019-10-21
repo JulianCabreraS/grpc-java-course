@@ -87,4 +87,29 @@ public class GreetServiceImpl extends GreetServiceGrpc.GreetServiceImplBase {
         };
         return streamObserverOfRequest;
     }
+
+    @Override
+    public StreamObserver<Greet.GreetEveryoneRequest> greetEveryone(StreamObserver<Greet.GreetEveryoneResponse> responseObserver) {
+        return new StreamObserver<Greet.GreetEveryoneRequest>() {
+            @Override
+            public void onNext(Greet.GreetEveryoneRequest value) {
+                String response = "Hello " + value.getGreeting().getFirstName();
+                Greet.GreetEveryoneResponse greetEveryoneResponse= Greet.GreetEveryoneResponse.newBuilder()
+                        .setResult(response)
+                        .build();
+                responseObserver.onNext(greetEveryoneResponse);
+            }
+
+            @Override
+            public void onError(Throwable t) {
+
+            }
+
+            @Override
+            public void onCompleted() {
+                //this is when we want to retun a response
+                responseObserver.onCompleted();
+            }
+        };
+    }
 }

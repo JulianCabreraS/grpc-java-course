@@ -7,11 +7,15 @@ import com.proto.calculator.proto.Calculator.SumRequest;
 import com.proto.calculator.proto.Calculator.SumResponse;
 import com.proto.calculator.proto.Calculator.ComputeAverageRequest;
 import com.proto.calculator.proto.Calculator.ComputeAverageResponse;
+import com.proto.calculator.proto.Calculator.FindMaximumRequest;
+import com.proto.calculator.proto.Calculator.FindMaximumResponse;
+
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
 
+import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
@@ -27,6 +31,7 @@ class CalculatorClient {
        unaryService(channel);
        streamServerService(channel);
        streamClientService(channel);
+       bidiStreamService(channel);
 
         //Do something
         System.out.println("Shutting down channel");
@@ -102,6 +107,44 @@ class CalculatorClient {
 
         requestStreamObserver.onCompleted();
 
+        try {
+            latch.await(3L, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    private static void bidiStreamService(ManagedChannel channel){
+        //Create a aysnchronous client
+        CalculatorServiceGrpc.CalculatorServiceStub asynClient = CalculatorServiceGrpc.newStub(channel);
+        CountDownLatch latch = new CountDownLatch(1);
+        StreamObserver<FindMaximumRequest> streamObserver = asynClient.findMaximum(new StreamObserver<FindMaximumResponse>() {
+            @Override
+            public void onNext(FindMaximumResponse value) {
+                System.out.println("Got new maxium from server: "+ value.getMaximum());
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                latch.countDown();
+            }
+
+            @Override
+            public void onCompleted() {
+                System.out.println("Server is done sending data");
+                latch.countDown();
+            }
+        });
+
+        Arrays.asList(1,5,3,6,2,20).forEach(
+                number -> {
+                    System.out.println("Sending number: "+ number);
+                    streamObserver.onNext(FindMaximumRequest.newBuilder()
+                            .setNumber(number)
+                            .build());
+                }
+        );
+
+       streamObserver.onCompleted();
         try {
             latch.await(3L, TimeUnit.SECONDS);
         } catch (InterruptedException e) {

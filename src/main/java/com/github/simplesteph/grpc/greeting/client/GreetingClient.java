@@ -15,6 +15,7 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
 
+import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
@@ -33,6 +34,7 @@ public class GreetingClient {
        unaryService(channel);
        streamGreetServerService(channel);
        streamGreetClientService(channel);
+       bidiStreamService(channel);
 
         //Do something
         System.out.println("Shutting down channel");
@@ -92,8 +94,6 @@ public class GreetingClient {
 
         //Create a aysnchronous client
         GreetServiceGrpc.GreetServiceStub streamClientService = GreetServiceGrpc.newStub(channel);
-
-
         CountDownLatch latch = new CountDownLatch(1);
 
         StreamObserver<LongGreetRequest> requestStreamObserver = streamClientService.longGreet(new StreamObserver<LongGreetResponse>() {
@@ -102,13 +102,10 @@ public class GreetingClient {
                 //we get a response from the server
                 System.out.println("Received a response from the server");
                 System.out.println(value.getResult());
-                //onNext will be called only once
             }
 
             @Override
-            public void onError(Throwable t) {
-
-            }
+            public void onError(Throwable t) { }
 
             @Override
             public void onCompleted() {
@@ -116,7 +113,6 @@ public class GreetingClient {
                 //onCompleted will be called right after onNext
                 System.out.println("Server has completed sending us something");
                 latch.countDown();
-
             }
         });
 
@@ -144,6 +140,51 @@ public class GreetingClient {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+
+    }
+
+    private static void bidiStreamService(ManagedChannel channel){
+        //Create a aysnchronous client
+        GreetServiceGrpc.GreetServiceStub asynClient = GreetServiceGrpc.newStub(channel);
+        CountDownLatch latch = new CountDownLatch(1);
+
+        StreamObserver<Greet.GreetEveryoneRequest> requestStreamObserver=  asynClient.greetEveryone(new StreamObserver<Greet.GreetEveryoneResponse>() {
+            @Override
+            public void onNext(Greet.GreetEveryoneResponse value) {
+                System.out.println("Response from server: "+ value.getResult());
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                latch.countDown();
+            }
+
+            @Override
+            public void onCompleted() {
+                System.out.println("Server is done sending data");
+                latch.countDown();
+
+            }
+        });
+
+        Arrays.asList("Stephane", "John", "Marc", "Patricia").forEach(
+                name -> {
+                    System.out.println("Sending "+ name);
+                    requestStreamObserver.onNext(Greet.GreetEveryoneRequest.newBuilder()
+                            .setGreeting(Greeting.newBuilder()
+                                    .setFirstName(name))
+                            .build());
+                }
+        );
+
+        requestStreamObserver.onCompleted();
+        try {
+            latch.await(3L, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
 
 
     }

@@ -3000,6 +3000,978 @@ public final class Calculator {
 
   }
 
+  public interface FindMaximumRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:calculator.FindMaximumRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 number = 1;</code>
+     * @return The number.
+     */
+    int getNumber();
+  }
+  /**
+   * Protobuf type {@code calculator.FindMaximumRequest}
+   */
+  public  static final class FindMaximumRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:calculator.FindMaximumRequest)
+      FindMaximumRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use FindMaximumRequest.newBuilder() to construct.
+    private FindMaximumRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FindMaximumRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new FindMaximumRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private FindMaximumRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              number_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.proto.calculator.proto.Calculator.internal_static_calculator_FindMaximumRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.proto.calculator.proto.Calculator.internal_static_calculator_FindMaximumRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.proto.calculator.proto.Calculator.FindMaximumRequest.class, com.proto.calculator.proto.Calculator.FindMaximumRequest.Builder.class);
+    }
+
+    public static final int NUMBER_FIELD_NUMBER = 1;
+    private int number_;
+    /**
+     * <code>int32 number = 1;</code>
+     * @return The number.
+     */
+    public int getNumber() {
+      return number_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (number_ != 0) {
+        output.writeInt32(1, number_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (number_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, number_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.proto.calculator.proto.Calculator.FindMaximumRequest)) {
+        return super.equals(obj);
+      }
+      com.proto.calculator.proto.Calculator.FindMaximumRequest other = (com.proto.calculator.proto.Calculator.FindMaximumRequest) obj;
+
+      if (getNumber()
+          != other.getNumber()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getNumber();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.proto.calculator.proto.Calculator.FindMaximumRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.proto.calculator.proto.Calculator.FindMaximumRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code calculator.FindMaximumRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:calculator.FindMaximumRequest)
+        com.proto.calculator.proto.Calculator.FindMaximumRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.proto.calculator.proto.Calculator.internal_static_calculator_FindMaximumRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.proto.calculator.proto.Calculator.internal_static_calculator_FindMaximumRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.proto.calculator.proto.Calculator.FindMaximumRequest.class, com.proto.calculator.proto.Calculator.FindMaximumRequest.Builder.class);
+      }
+
+      // Construct using com.proto.calculator.proto.Calculator.FindMaximumRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        number_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.proto.calculator.proto.Calculator.internal_static_calculator_FindMaximumRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.proto.calculator.proto.Calculator.FindMaximumRequest getDefaultInstanceForType() {
+        return com.proto.calculator.proto.Calculator.FindMaximumRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.proto.calculator.proto.Calculator.FindMaximumRequest build() {
+        com.proto.calculator.proto.Calculator.FindMaximumRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.proto.calculator.proto.Calculator.FindMaximumRequest buildPartial() {
+        com.proto.calculator.proto.Calculator.FindMaximumRequest result = new com.proto.calculator.proto.Calculator.FindMaximumRequest(this);
+        result.number_ = number_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.proto.calculator.proto.Calculator.FindMaximumRequest) {
+          return mergeFrom((com.proto.calculator.proto.Calculator.FindMaximumRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.proto.calculator.proto.Calculator.FindMaximumRequest other) {
+        if (other == com.proto.calculator.proto.Calculator.FindMaximumRequest.getDefaultInstance()) return this;
+        if (other.getNumber() != 0) {
+          setNumber(other.getNumber());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.proto.calculator.proto.Calculator.FindMaximumRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.proto.calculator.proto.Calculator.FindMaximumRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int number_ ;
+      /**
+       * <code>int32 number = 1;</code>
+       * @return The number.
+       */
+      public int getNumber() {
+        return number_;
+      }
+      /**
+       * <code>int32 number = 1;</code>
+       * @param value The number to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNumber(int value) {
+        
+        number_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 number = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNumber() {
+        
+        number_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:calculator.FindMaximumRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:calculator.FindMaximumRequest)
+    private static final com.proto.calculator.proto.Calculator.FindMaximumRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.proto.calculator.proto.Calculator.FindMaximumRequest();
+    }
+
+    public static com.proto.calculator.proto.Calculator.FindMaximumRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FindMaximumRequest>
+        PARSER = new com.google.protobuf.AbstractParser<FindMaximumRequest>() {
+      @java.lang.Override
+      public FindMaximumRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new FindMaximumRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FindMaximumRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FindMaximumRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.proto.calculator.proto.Calculator.FindMaximumRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface FindMaximumResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:calculator.FindMaximumResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 maximum = 1;</code>
+     * @return The maximum.
+     */
+    int getMaximum();
+  }
+  /**
+   * Protobuf type {@code calculator.FindMaximumResponse}
+   */
+  public  static final class FindMaximumResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:calculator.FindMaximumResponse)
+      FindMaximumResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use FindMaximumResponse.newBuilder() to construct.
+    private FindMaximumResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FindMaximumResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new FindMaximumResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private FindMaximumResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              maximum_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.proto.calculator.proto.Calculator.internal_static_calculator_FindMaximumResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.proto.calculator.proto.Calculator.internal_static_calculator_FindMaximumResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.proto.calculator.proto.Calculator.FindMaximumResponse.class, com.proto.calculator.proto.Calculator.FindMaximumResponse.Builder.class);
+    }
+
+    public static final int MAXIMUM_FIELD_NUMBER = 1;
+    private int maximum_;
+    /**
+     * <code>int32 maximum = 1;</code>
+     * @return The maximum.
+     */
+    public int getMaximum() {
+      return maximum_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (maximum_ != 0) {
+        output.writeInt32(1, maximum_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (maximum_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, maximum_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.proto.calculator.proto.Calculator.FindMaximumResponse)) {
+        return super.equals(obj);
+      }
+      com.proto.calculator.proto.Calculator.FindMaximumResponse other = (com.proto.calculator.proto.Calculator.FindMaximumResponse) obj;
+
+      if (getMaximum()
+          != other.getMaximum()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MAXIMUM_FIELD_NUMBER;
+      hash = (53 * hash) + getMaximum();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.proto.calculator.proto.Calculator.FindMaximumResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.proto.calculator.proto.Calculator.FindMaximumResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.proto.calculator.proto.Calculator.FindMaximumResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code calculator.FindMaximumResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:calculator.FindMaximumResponse)
+        com.proto.calculator.proto.Calculator.FindMaximumResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.proto.calculator.proto.Calculator.internal_static_calculator_FindMaximumResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.proto.calculator.proto.Calculator.internal_static_calculator_FindMaximumResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.proto.calculator.proto.Calculator.FindMaximumResponse.class, com.proto.calculator.proto.Calculator.FindMaximumResponse.Builder.class);
+      }
+
+      // Construct using com.proto.calculator.proto.Calculator.FindMaximumResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        maximum_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.proto.calculator.proto.Calculator.internal_static_calculator_FindMaximumResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.proto.calculator.proto.Calculator.FindMaximumResponse getDefaultInstanceForType() {
+        return com.proto.calculator.proto.Calculator.FindMaximumResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.proto.calculator.proto.Calculator.FindMaximumResponse build() {
+        com.proto.calculator.proto.Calculator.FindMaximumResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.proto.calculator.proto.Calculator.FindMaximumResponse buildPartial() {
+        com.proto.calculator.proto.Calculator.FindMaximumResponse result = new com.proto.calculator.proto.Calculator.FindMaximumResponse(this);
+        result.maximum_ = maximum_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.proto.calculator.proto.Calculator.FindMaximumResponse) {
+          return mergeFrom((com.proto.calculator.proto.Calculator.FindMaximumResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.proto.calculator.proto.Calculator.FindMaximumResponse other) {
+        if (other == com.proto.calculator.proto.Calculator.FindMaximumResponse.getDefaultInstance()) return this;
+        if (other.getMaximum() != 0) {
+          setMaximum(other.getMaximum());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.proto.calculator.proto.Calculator.FindMaximumResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.proto.calculator.proto.Calculator.FindMaximumResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int maximum_ ;
+      /**
+       * <code>int32 maximum = 1;</code>
+       * @return The maximum.
+       */
+      public int getMaximum() {
+        return maximum_;
+      }
+      /**
+       * <code>int32 maximum = 1;</code>
+       * @param value The maximum to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaximum(int value) {
+        
+        maximum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 maximum = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMaximum() {
+        
+        maximum_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:calculator.FindMaximumResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:calculator.FindMaximumResponse)
+    private static final com.proto.calculator.proto.Calculator.FindMaximumResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.proto.calculator.proto.Calculator.FindMaximumResponse();
+    }
+
+    public static com.proto.calculator.proto.Calculator.FindMaximumResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FindMaximumResponse>
+        PARSER = new com.google.protobuf.AbstractParser<FindMaximumResponse>() {
+      @java.lang.Override
+      public FindMaximumResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new FindMaximumResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FindMaximumResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FindMaximumResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.proto.calculator.proto.Calculator.FindMaximumResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_calculator_SumRequest_descriptor;
   private static final 
@@ -3030,6 +4002,16 @@ public final class Calculator {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_calculator_ComputeAverageResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_calculator_FindMaximumRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_calculator_FindMaximumRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_calculator_FindMaximumResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_calculator_FindMaximumResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3047,15 +4029,19 @@ public final class Calculator {
       "rDecompositionResponse\022\024\n\014prime_factor\030\001" +
       " \001(\005\"\'\n\025ComputeAverageRequest\022\016\n\006number\030" +
       "\001 \001(\005\")\n\026ComputeAverageResponse\022\017\n\007avera" +
-      "ge\030\001 \001(\0012\245\002\n\021CalculatorService\0228\n\003sum\022\026." +
-      "calculator.SumRequest\032\027.calculator.SumRe" +
-      "sponse\"\000\022y\n\030PrimeNumberDecomposition\022+.c" +
-      "alculator.PrimeNumberDecompositionReques" +
-      "t\032,.calculator.PrimeNumberDecompositionR" +
-      "esponse\"\0000\001\022[\n\016ComputeAverage\022!.calculat" +
-      "or.ComputeAverageRequest\032\".calculator.Co" +
-      "mputeAverageResponse\"\000(\001B\034\n\032com.proto.ca" +
-      "lculator.protob\006proto3"
+      "ge\030\001 \001(\001\"$\n\022FindMaximumRequest\022\016\n\006number" +
+      "\030\001 \001(\005\"&\n\023FindMaximumResponse\022\017\n\007maximum" +
+      "\030\001 \001(\0052\373\002\n\021CalculatorService\0228\n\003sum\022\026.ca" +
+      "lculator.SumRequest\032\027.calculator.SumResp" +
+      "onse\"\000\022y\n\030PrimeNumberDecomposition\022+.cal" +
+      "culator.PrimeNumberDecompositionRequest\032" +
+      ",.calculator.PrimeNumberDecompositionRes" +
+      "ponse\"\0000\001\022[\n\016ComputeAverage\022!.calculator" +
+      ".ComputeAverageRequest\032\".calculator.Comp" +
+      "uteAverageResponse\"\000(\001\022T\n\013FindMaximum\022\036." +
+      "calculator.FindMaximumRequest\032\037.calculat" +
+      "or.FindMaximumResponse\"\000(\0010\001B\034\n\032com.prot" +
+      "o.calculator.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3097,6 +4083,18 @@ public final class Calculator {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_calculator_ComputeAverageResponse_descriptor,
         new java.lang.String[] { "Average", });
+    internal_static_calculator_FindMaximumRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_calculator_FindMaximumRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_calculator_FindMaximumRequest_descriptor,
+        new java.lang.String[] { "Number", });
+    internal_static_calculator_FindMaximumResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_calculator_FindMaximumResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_calculator_FindMaximumResponse_descriptor,
+        new java.lang.String[] { "Maximum", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
