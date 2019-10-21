@@ -114,7 +114,7 @@ class CalculatorClient {
         }
     }
     private static void bidiStreamService(ManagedChannel channel){
-        //Create a aysnchronous client
+        //Create a asynchronous client
         CalculatorServiceGrpc.CalculatorServiceStub asynClient = CalculatorServiceGrpc.newStub(channel);
         CountDownLatch latch = new CountDownLatch(1);
         StreamObserver<FindMaximumRequest> streamObserver = asynClient.findMaximum(new StreamObserver<FindMaximumResponse>() {
