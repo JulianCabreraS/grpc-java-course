@@ -13,6 +13,8 @@ import com.proto.calculator.proto.Calculator.FindMaximumResponse;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.StatusException;
+import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 
 import java.util.Arrays;
@@ -32,6 +34,7 @@ class CalculatorClient {
        streamServerService(channel);
        streamClientService(channel);
        bidiStreamService(channel);
+       SquareErroCal(channel);
 
         //Do something
         System.out.println("Shutting down channel");
@@ -150,5 +153,26 @@ class CalculatorClient {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+    private static void SquareErroCal(ManagedChannel channel){
+        //Created a greet service client (blocking synchronous
+        CalculatorServiceBlockingStub calculatorClient = newBlockingStub(channel);
+
+        //Create square request
+        Calculator.SquareRootRequest squareRootRequest= Calculator.SquareRootRequest
+                .newBuilder()
+                .setNumber(-2)
+                .build();
+        try {
+            //Call the RPc
+            Calculator.SquareRootResponse squareRootResponse = calculatorClient.squareRoot(squareRootRequest);
+            System.out.println(squareRootResponse.getNumberRoot());
+        }catch (StatusRuntimeException e){
+            System.out.println("Got an exception");
+            e.printStackTrace();
+        }
+
+       
+
     }
 }

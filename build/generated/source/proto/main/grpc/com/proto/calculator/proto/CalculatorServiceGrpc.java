@@ -151,6 +151,37 @@ public final class CalculatorServiceGrpc {
     return getFindMaximumMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.proto.calculator.proto.Calculator.SquareRootRequest,
+      com.proto.calculator.proto.Calculator.SquareRootResponse> getSquareRootMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SquareRoot",
+      requestType = com.proto.calculator.proto.Calculator.SquareRootRequest.class,
+      responseType = com.proto.calculator.proto.Calculator.SquareRootResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.proto.calculator.proto.Calculator.SquareRootRequest,
+      com.proto.calculator.proto.Calculator.SquareRootResponse> getSquareRootMethod() {
+    io.grpc.MethodDescriptor<com.proto.calculator.proto.Calculator.SquareRootRequest, com.proto.calculator.proto.Calculator.SquareRootResponse> getSquareRootMethod;
+    if ((getSquareRootMethod = CalculatorServiceGrpc.getSquareRootMethod) == null) {
+      synchronized (CalculatorServiceGrpc.class) {
+        if ((getSquareRootMethod = CalculatorServiceGrpc.getSquareRootMethod) == null) {
+          CalculatorServiceGrpc.getSquareRootMethod = getSquareRootMethod =
+              io.grpc.MethodDescriptor.<com.proto.calculator.proto.Calculator.SquareRootRequest, com.proto.calculator.proto.Calculator.SquareRootResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SquareRoot"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.calculator.proto.Calculator.SquareRootRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.calculator.proto.Calculator.SquareRootResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CalculatorServiceMethodDescriptorSupplier("SquareRoot"))
+              .build();
+        }
+      }
+    }
+    return getSquareRootMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -193,6 +224,9 @@ public final class CalculatorServiceGrpc {
     }
 
     /**
+     * <pre>
+     *this rpc will throw an exception if the sent number is negative
+     * </pre>
      */
     public io.grpc.stub.StreamObserver<com.proto.calculator.proto.Calculator.ComputeAverageRequest> computeAverage(
         io.grpc.stub.StreamObserver<com.proto.calculator.proto.Calculator.ComputeAverageResponse> responseObserver) {
@@ -204,6 +238,16 @@ public final class CalculatorServiceGrpc {
     public io.grpc.stub.StreamObserver<com.proto.calculator.proto.Calculator.FindMaximumRequest> findMaximum(
         io.grpc.stub.StreamObserver<com.proto.calculator.proto.Calculator.FindMaximumResponse> responseObserver) {
       return asyncUnimplementedStreamingCall(getFindMaximumMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *Error handling
+     * </pre>
+     */
+    public void squareRoot(com.proto.calculator.proto.Calculator.SquareRootRequest request,
+        io.grpc.stub.StreamObserver<com.proto.calculator.proto.Calculator.SquareRootResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getSquareRootMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -236,6 +280,13 @@ public final class CalculatorServiceGrpc {
                 com.proto.calculator.proto.Calculator.FindMaximumRequest,
                 com.proto.calculator.proto.Calculator.FindMaximumResponse>(
                   this, METHODID_FIND_MAXIMUM)))
+          .addMethod(
+            getSquareRootMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.proto.calculator.proto.Calculator.SquareRootRequest,
+                com.proto.calculator.proto.Calculator.SquareRootResponse>(
+                  this, METHODID_SQUARE_ROOT)))
           .build();
     }
   }
@@ -275,6 +326,9 @@ public final class CalculatorServiceGrpc {
     }
 
     /**
+     * <pre>
+     *this rpc will throw an exception if the sent number is negative
+     * </pre>
      */
     public io.grpc.stub.StreamObserver<com.proto.calculator.proto.Calculator.ComputeAverageRequest> computeAverage(
         io.grpc.stub.StreamObserver<com.proto.calculator.proto.Calculator.ComputeAverageResponse> responseObserver) {
@@ -288,6 +342,17 @@ public final class CalculatorServiceGrpc {
         io.grpc.stub.StreamObserver<com.proto.calculator.proto.Calculator.FindMaximumResponse> responseObserver) {
       return asyncBidiStreamingCall(
           getChannel().newCall(getFindMaximumMethod(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *Error handling
+     * </pre>
+     */
+    public void squareRoot(com.proto.calculator.proto.Calculator.SquareRootRequest request,
+        io.grpc.stub.StreamObserver<com.proto.calculator.proto.Calculator.SquareRootResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getSquareRootMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -323,6 +388,16 @@ public final class CalculatorServiceGrpc {
       return blockingServerStreamingCall(
           getChannel(), getPrimeNumberDecompositionMethod(), getCallOptions(), request);
     }
+
+    /**
+     * <pre>
+     *Error handling
+     * </pre>
+     */
+    public com.proto.calculator.proto.Calculator.SquareRootResponse squareRoot(com.proto.calculator.proto.Calculator.SquareRootRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getSquareRootMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -350,12 +425,24 @@ public final class CalculatorServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getSumMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     *Error handling
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.proto.calculator.proto.Calculator.SquareRootResponse> squareRoot(
+        com.proto.calculator.proto.Calculator.SquareRootRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getSquareRootMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_SUM = 0;
   private static final int METHODID_PRIME_NUMBER_DECOMPOSITION = 1;
-  private static final int METHODID_COMPUTE_AVERAGE = 2;
-  private static final int METHODID_FIND_MAXIMUM = 3;
+  private static final int METHODID_SQUARE_ROOT = 2;
+  private static final int METHODID_COMPUTE_AVERAGE = 3;
+  private static final int METHODID_FIND_MAXIMUM = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -381,6 +468,10 @@ public final class CalculatorServiceGrpc {
         case METHODID_PRIME_NUMBER_DECOMPOSITION:
           serviceImpl.primeNumberDecomposition((com.proto.calculator.proto.Calculator.PrimeNumberDecompositionRequest) request,
               (io.grpc.stub.StreamObserver<com.proto.calculator.proto.Calculator.PrimeNumberDecompositionResponse>) responseObserver);
+          break;
+        case METHODID_SQUARE_ROOT:
+          serviceImpl.squareRoot((com.proto.calculator.proto.Calculator.SquareRootRequest) request,
+              (io.grpc.stub.StreamObserver<com.proto.calculator.proto.Calculator.SquareRootResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -453,6 +544,7 @@ public final class CalculatorServiceGrpc {
               .addMethod(getPrimeNumberDecompositionMethod())
               .addMethod(getComputeAverageMethod())
               .addMethod(getFindMaximumMethod())
+              .addMethod(getSquareRootMethod())
               .build();
         }
       }

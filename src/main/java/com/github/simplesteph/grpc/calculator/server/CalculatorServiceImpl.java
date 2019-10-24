@@ -4,6 +4,7 @@ import com.proto.calculator.proto.Calculator;
 import com.proto.calculator.proto.CalculatorServiceGrpc;
 import com.proto.calculator.proto.Calculator.ComputeAverageResponse;
 import com.proto.calculator.proto.Calculator.ComputeAverageRequest;
+import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 
 public class CalculatorServiceImpl extends CalculatorServiceGrpc.CalculatorServiceImplBase {
@@ -94,5 +95,28 @@ public class CalculatorServiceImpl extends CalculatorServiceGrpc.CalculatorServi
                 responseObserver.onCompleted();
             }
         };
+    }
+
+    @Override
+    public void squareRoot(Calculator.SquareRootRequest request, StreamObserver<Calculator.SquareRootResponse> responseObserver) {
+        Integer number =request.getNumber();
+
+        if(number >0){
+            double numberRoot = Math.sqrt(number);
+            Calculator.SquareRootResponse squareRootResponse= Calculator.SquareRootResponse.newBuilder()
+                    .setNumberRoot(numberRoot)
+                    .build();
+
+            responseObserver.onNext(squareRootResponse);
+
+
+        }else
+        {
+            //We construct the exception
+            responseObserver.onError(
+                    Status.INVALID_ARGUMENT
+                    .withDescription("The number being sent is not positive")
+                    .asRuntimeException());
+        }
     }
 }
